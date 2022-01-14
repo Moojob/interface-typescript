@@ -5,6 +5,8 @@ export class ventilo implements observe {
     private  puissance: number = 400;
     private htmlDiv: HTMLDivElement;
     private htmlButton: HTMLButtonElement;
+    private htmlInput: HTMLInputElement;
+
     constructor(private name: string, tempsObservable: subject) {
         let container = document.querySelector("#ventilo-container") as HTMLDivElement
         let ventiloDiv = document.createElement('div')
@@ -15,19 +17,29 @@ export class ventilo implements observe {
         this.htmlButton.addEventListener('click', (e: Event) => {
             if (this.htmlButton.innerText === "Se désabonner") {
                 this.htmlButton.innerText = "S'abonner"
+                
                 tempsObservable.unsubscribe(this)
             } else {
                 this.htmlButton.innerText = "Se désabonner"
                 tempsObservable.subscribe(this)
+                
             }
+        })
+
+        this.htmlInput = document.createElement('input')
+        this.htmlInput.setAttribute('type', 'number')
+        this.htmlInput.addEventListener('click', (e: Event) => {
+            this.htmlInput
         })
         div.innerText = this.name;
         div.className = 'ventilo-off'
         container.append(div)
         div.id = this.name
         this.htmlDiv = div
+        ventiloDiv.append(this.htmlInput)
         ventiloDiv.append(div)
         ventiloDiv.append(this.htmlButton)
+        
         container.append(ventiloDiv)
     }
     update (temps: number){
