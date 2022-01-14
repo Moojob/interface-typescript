@@ -28,8 +28,10 @@ export class ventilo implements observe {
 
         this.htmlInput = document.createElement('input')
         this.htmlInput.setAttribute('type', 'number')
+        this.htmlInput.valueAsNumber
         this.htmlInput.addEventListener('click', (e: Event) => {
             this.htmlInput
+          
         })
         div.innerText = this.name;
         div.className = 'ventilo-off'
@@ -43,9 +45,11 @@ export class ventilo implements observe {
         container.append(ventiloDiv)
     }
     update (temps: number){
-        if (temps > 20 ){
+        if (temps > this.htmlInput.valueAsNumber ) {
+            console.log(this.htmlInput.valueAsNumber);
             console.log('Démarrer le ventilo', this.name);
             // let div = document.querySelector("#"+this.name)
+            
             this.htmlDiv.className = 'ventilo-on'
         }
         else{
