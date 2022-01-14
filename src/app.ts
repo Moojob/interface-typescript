@@ -5,19 +5,20 @@ import {observe} from './interfaces/observe'
 
 let temps: Temperature = new Temperature(25) ;
 let nbrVentilo=0;
+let nbrFrigo = 0;
 
 //  const ventilo1 :  observe = new ventilo ('ventilo1')
 // const ventilo2 : observe = new ventilo('ventilo2')
 // const ventilo3 : observe = new ventilo('ventilo3')
 
-const frigo1 : observe = new frigo('frigo1')
-const frigo2 : observe = new frigo('frigo2')
+// const frigo1 : observe = new frigo('frigo1')
+// const frigo2 : observe = new frigo('frigo2')
 
 // temps.subscribe(ventilo1)
 // temps.subscribe(ventilo2)
 // temps.subscribe(ventilo3)
-temps.subscribe(frigo1)
-temps.subscribe(frigo2)
+// temps.subscribe(frigo1)
+// temps.subscribe(frigo2)
 
 let temperatureControl = document.querySelector('#temperature') as HTMLInputElement
 temperatureControl.addEventListener('change', (e: Event) => {
@@ -29,4 +30,11 @@ btnAddVentilo.addEventListener("click", (e: Event) => {
     nbrVentilo++;
     let newVentilo: observe = new ventilo("ventilo"+nbrVentilo.toString(), temps)
     temps.subscribe(newVentilo)
+})
+
+let btnAddFrigo = document.querySelector('#add-frigo') as HTMLButtonElement
+btnAddFrigo.addEventListener("click", (e: Event) => {
+    nbrFrigo++;
+    let newFrigo: observe = new frigo("frigo"+nbrFrigo.toString(), temps)
+    temps.subscribe(newFrigo)
 })

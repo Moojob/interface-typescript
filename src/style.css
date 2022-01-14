@@ -25,3 +25,33 @@ div.ventilo-div{
     flex-direction: column;
     justify-content: center;
 }
+
+
+
+div#frigo-container{
+    display:  flex;
+    justify-content: space-around;
+   
+}
+
+div.frigo-on, div.frigo-off{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.frigo-off{
+   background-color: red;
+}
+
+div.frigo-on{
+    background-color: green;
+}
+
+div.frigo-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

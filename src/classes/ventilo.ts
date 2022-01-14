@@ -31,7 +31,7 @@ export class ventilo implements observe {
         container.append(ventiloDiv)
     }
     update (temps: number){
-        if (temps > 30 ){
+        if (temps > 20 ){
             console.log('Démarrer le ventilo', this.name);
             // let div = document.querySelector("#"+this.name)
             this.htmlDiv.className = 'ventilo-on'
