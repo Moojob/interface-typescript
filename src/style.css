@@ -5,7 +5,7 @@ div#ventilo-container{
 }
 
 div.ventilo-on, div.ventilo-off{
-    width: 100px;
+    width: 200px;
     height: 100px;
     display: flex;
     justify-content: center;
@@ -35,7 +35,7 @@ div#frigo-container{
 }
 
 div.frigo-on, div.frigo-off{
-    width: 100px;
+    width: 200px;
     height: 100px;
     display: flex;
     justify-content: center;

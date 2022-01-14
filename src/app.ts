@@ -30,7 +30,7 @@ btnAddVentilo.addEventListener("click", (e: Event) => {
     nbrVentilo++;
     let newVentilo: observe = new ventilo("ventilo"+nbrVentilo.toString(), temps)
     temps.subscribe(newVentilo)
-    
+
 })
 
 let btnAddFrigo = document.querySelector('#add-frigo') as HTMLButtonElement

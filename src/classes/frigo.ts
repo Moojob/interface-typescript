@@ -5,6 +5,8 @@ export class frigo implements observe {
     private  puissance: number = 400;
     private htmlDiv: HTMLDivElement;
     private htmlButton: HTMLButtonElement;
+    private htmlInput: HTMLInputElement;
+
     constructor(private name: string, tempsObservable: subject) {
         let container = document.querySelector("#frigo-container") as HTMLDivElement
         let frigoDiv = document.createElement('div')
@@ -21,17 +23,29 @@ export class frigo implements observe {
                 tempsObservable.subscribe(this)
             }
         })
+
+        this.htmlInput = document.createElement('input')
+        this.htmlInput.setAttribute('type', 'number')
+        this.htmlInput.valueAsNumber
+        this.htmlInput.addEventListener('click', (e: Event) => {
+            this.htmlInput
+          
+        })
+
         div.innerText = this.name;
-        div.className = 'frigo-off'
+        div.className = 'ventilo-off'
         container.append(div)
         div.id = this.name
         this.htmlDiv = div
+        frigoDiv.append(this.htmlInput)
         frigoDiv.append(div)
         frigoDiv.append(this.htmlButton)
+
         container.append(frigoDiv)
     }
     update (temps: number){
-        if (temps > 10 ){
+        if (temps > this.htmlInput.valueAsNumber){
+            console.log(this.htmlInput.valueAsNumber);
             console.log('Démarrer le frigo', this.name);
             // let div = document.querySelector("#"+this.name)
             this.htmlDiv.className = 'frigo-on'
