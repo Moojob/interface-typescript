@@ -1,0 +1,27 @@
+div#ventilo-container{
+    display:  flex;
+    justify-content: space-around;
+   
+}
+
+div.ventilo-on, div.ventilo-off{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.ventilo-off{
+   background-color: red;
+}
+
+div.ventilo-on{
+    background-color: green;
+}
+
+div.ventilo-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
